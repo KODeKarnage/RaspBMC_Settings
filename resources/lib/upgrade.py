@@ -22,7 +22,6 @@ import urllib2
 import re
 import xbmcgui
 import os
-import shutil
 import sys
 import xbmc
 import traceback
@@ -326,7 +325,7 @@ def delete(path):
     version=selection_list[answer]
     src=os.path.join(path,version)
     if os.path.exists(src):
-        shutil.rmtree(src)
+        os.system('sudo rm -rf %s' % src)
         dialog.ok("RaspBMC Settings","%s deleted." % (version))
 
 
